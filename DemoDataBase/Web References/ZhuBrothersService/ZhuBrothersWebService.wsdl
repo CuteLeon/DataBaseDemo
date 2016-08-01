@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.zhubrothers.com/Service.asmx" xmlns:s1="http://www.zhubrothers.com/Service.asmx/AbstractTypes" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://www.zhubrothers.com/Service.asmx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.zhubrothers.com/Service.asmx">
+      <s:element name="WebServiceExcute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataInfo">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebServiceExcuteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebServiceExcuteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebServiceExcuteTable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataInfo">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebServiceExcuteTableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebServiceExcuteTableResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebServiceExcuteTableClear">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OperType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebServiceExcuteTableClearResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebServiceExcuteTableClearResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebServiceExcuteTableDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTableName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebServiceExcuteTableDeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebServiceExcuteTableDeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExcuteQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExcuteQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebExcuteQueryResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExcuteQuerySQL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSQL" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strTableName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExcuteQuerySQLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebExcuteQuerySQLResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExcuteSQL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExcuteSQLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebExcuteSQLResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExecuteSQLImageBinary">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataInfo" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExecuteSQLImageBinaryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebExecuteSQLImageBinaryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExecuteSQLImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DataInfo">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExecuteSQLImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebExecuteSQLImageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebExcuteQueryUpdateInfo">
+        <s:complexType />
+      </s:element>
+      <s:element name="WebExcuteQueryUpdateInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebExcuteQueryUpdateInfoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBinaryFormatData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSQL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBinaryFormatDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBinaryFormatDataResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="boolean" type="s:boolean" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="base64Binary" nillable="true" type="s:base64Binary" />
+    </s:schema>
+    <s:schema targetNamespace="http://www.zhubrothers.com/Service.asmx/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WebServiceExcuteSoapIn">
+    <wsdl:part name="parameters" element="tns:WebServiceExcute" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteSoapOut">
+    <wsdl:part name="parameters" element="tns:WebServiceExcuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableSoapIn">
+    <wsdl:part name="parameters" element="tns:WebServiceExcuteTable" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableSoapOut">
+    <wsdl:part name="parameters" element="tns:WebServiceExcuteTableResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableClearSoapIn">
+    <wsdl:part name="parameters" element="tns:WebServiceExcuteTableClear" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableClearSoapOut">
+    <wsdl:part name="parameters" element="tns:WebServiceExcuteTableClearResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:WebServiceExcuteTableDelete" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:WebServiceExcuteTableDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:WebExcuteQuery" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:WebExcuteQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQuerySQLSoapIn">
+    <wsdl:part name="parameters" element="tns:WebExcuteQuerySQL" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQuerySQLSoapOut">
+    <wsdl:part name="parameters" element="tns:WebExcuteQuerySQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteSQLSoapIn">
+    <wsdl:part name="parameters" element="tns:WebExcuteSQL" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteSQLSoapOut">
+    <wsdl:part name="parameters" element="tns:WebExcuteSQLResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebExecuteSQLImageBinarySoapIn">
+    <wsdl:part name="parameters" element="tns:WebExecuteSQLImageBinary" />
+  </wsdl:message>
+  <wsdl:message name="WebExecuteSQLImageBinarySoapOut">
+    <wsdl:part name="parameters" element="tns:WebExecuteSQLImageBinaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebExecuteSQLImageSoapIn">
+    <wsdl:part name="parameters" element="tns:WebExecuteSQLImage" />
+  </wsdl:message>
+  <wsdl:message name="WebExecuteSQLImageSoapOut">
+    <wsdl:part name="parameters" element="tns:WebExecuteSQLImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQueryUpdateInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:WebExcuteQueryUpdateInfo" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQueryUpdateInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:WebExcuteQueryUpdateInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBinaryFormatDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBinaryFormatData" />
+  </wsdl:message>
+  <wsdl:message name="GetBinaryFormatDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBinaryFormatDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableClearHttpGetIn">
+    <wsdl:part name="OperType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableClearHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableDeleteHttpGetIn">
+    <wsdl:part name="strTableName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableDeleteHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQueryHttpGetIn">
+    <wsdl:part name="strSQL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQueryHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQuerySQLHttpGetIn">
+    <wsdl:part name="strSQL" type="s:string" />
+    <wsdl:part name="strTableName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQuerySQLHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteSQLHttpGetIn">
+    <wsdl:part name="strSQL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteSQLHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WebExecuteSQLImageBinaryHttpGetIn">
+    <wsdl:part name="DataInfo" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="WebExecuteSQLImageBinaryHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQueryUpdateInfoHttpGetIn" />
+  <wsdl:message name="WebExcuteQueryUpdateInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetBinaryFormatDataHttpGetIn">
+    <wsdl:part name="strSQL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBinaryFormatDataHttpGetOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableClearHttpPostIn">
+    <wsdl:part name="OperType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableClearHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableDeleteHttpPostIn">
+    <wsdl:part name="strTableName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebServiceExcuteTableDeleteHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQueryHttpPostIn">
+    <wsdl:part name="strSQL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQueryHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQuerySQLHttpPostIn">
+    <wsdl:part name="strSQL" type="s:string" />
+    <wsdl:part name="strTableName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQuerySQLHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteSQLHttpPostIn">
+    <wsdl:part name="strSQL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteSQLHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WebExecuteSQLImageBinaryHttpPostIn">
+    <wsdl:part name="DataInfo" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="WebExecuteSQLImageBinaryHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="WebExcuteQueryUpdateInfoHttpPostIn" />
+  <wsdl:message name="WebExcuteQueryUpdateInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetBinaryFormatDataHttpPostIn">
+    <wsdl:part name="strSQL" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBinaryFormatDataHttpPostOut">
+    <wsdl:part name="Body" element="tns:base64Binary" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="WebServiceExcute">
+      <wsdl:input message="tns:WebServiceExcuteSoapIn" />
+      <wsdl:output message="tns:WebServiceExcuteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTable">
+      <wsdl:input message="tns:WebServiceExcuteTableSoapIn" />
+      <wsdl:output message="tns:WebServiceExcuteTableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableClear">
+      <wsdl:input message="tns:WebServiceExcuteTableClearSoapIn" />
+      <wsdl:output message="tns:WebServiceExcuteTableClearSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableDelete">
+      <wsdl:input message="tns:WebServiceExcuteTableDeleteSoapIn" />
+      <wsdl:output message="tns:WebServiceExcuteTableDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuery">
+      <wsdl:input message="tns:WebExcuteQuerySoapIn" />
+      <wsdl:output message="tns:WebExcuteQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuerySQL">
+      <wsdl:input message="tns:WebExcuteQuerySQLSoapIn" />
+      <wsdl:output message="tns:WebExcuteQuerySQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteSQL">
+      <wsdl:input message="tns:WebExcuteSQLSoapIn" />
+      <wsdl:output message="tns:WebExcuteSQLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImageBinary">
+      <wsdl:input message="tns:WebExecuteSQLImageBinarySoapIn" />
+      <wsdl:output message="tns:WebExecuteSQLImageBinarySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImage">
+      <wsdl:input message="tns:WebExecuteSQLImageSoapIn" />
+      <wsdl:output message="tns:WebExecuteSQLImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQueryUpdateInfo">
+      <wsdl:input message="tns:WebExcuteQueryUpdateInfoSoapIn" />
+      <wsdl:output message="tns:WebExcuteQueryUpdateInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinaryFormatData">
+      <wsdl:input message="tns:GetBinaryFormatDataSoapIn" />
+      <wsdl:output message="tns:GetBinaryFormatDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpGet">
+    <wsdl:operation name="WebServiceExcuteTableClear">
+      <wsdl:input message="tns:WebServiceExcuteTableClearHttpGetIn" />
+      <wsdl:output message="tns:WebServiceExcuteTableClearHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableDelete">
+      <wsdl:input message="tns:WebServiceExcuteTableDeleteHttpGetIn" />
+      <wsdl:output message="tns:WebServiceExcuteTableDeleteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuery">
+      <wsdl:input message="tns:WebExcuteQueryHttpGetIn" />
+      <wsdl:output message="tns:WebExcuteQueryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuerySQL">
+      <wsdl:input message="tns:WebExcuteQuerySQLHttpGetIn" />
+      <wsdl:output message="tns:WebExcuteQuerySQLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteSQL">
+      <wsdl:input message="tns:WebExcuteSQLHttpGetIn" />
+      <wsdl:output message="tns:WebExcuteSQLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImageBinary">
+      <wsdl:input message="tns:WebExecuteSQLImageBinaryHttpGetIn" />
+      <wsdl:output message="tns:WebExecuteSQLImageBinaryHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQueryUpdateInfo">
+      <wsdl:input message="tns:WebExcuteQueryUpdateInfoHttpGetIn" />
+      <wsdl:output message="tns:WebExcuteQueryUpdateInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinaryFormatData">
+      <wsdl:input message="tns:GetBinaryFormatDataHttpGetIn" />
+      <wsdl:output message="tns:GetBinaryFormatDataHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="ServiceHttpPost">
+    <wsdl:operation name="WebServiceExcuteTableClear">
+      <wsdl:input message="tns:WebServiceExcuteTableClearHttpPostIn" />
+      <wsdl:output message="tns:WebServiceExcuteTableClearHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableDelete">
+      <wsdl:input message="tns:WebServiceExcuteTableDeleteHttpPostIn" />
+      <wsdl:output message="tns:WebServiceExcuteTableDeleteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuery">
+      <wsdl:input message="tns:WebExcuteQueryHttpPostIn" />
+      <wsdl:output message="tns:WebExcuteQueryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuerySQL">
+      <wsdl:input message="tns:WebExcuteQuerySQLHttpPostIn" />
+      <wsdl:output message="tns:WebExcuteQuerySQLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteSQL">
+      <wsdl:input message="tns:WebExcuteSQLHttpPostIn" />
+      <wsdl:output message="tns:WebExcuteSQLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImageBinary">
+      <wsdl:input message="tns:WebExecuteSQLImageBinaryHttpPostIn" />
+      <wsdl:output message="tns:WebExecuteSQLImageBinaryHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQueryUpdateInfo">
+      <wsdl:input message="tns:WebExcuteQueryUpdateInfoHttpPostIn" />
+      <wsdl:output message="tns:WebExcuteQueryUpdateInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBinaryFormatData">
+      <wsdl:input message="tns:GetBinaryFormatDataHttpPostIn" />
+      <wsdl:output message="tns:GetBinaryFormatDataHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WebServiceExcute">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebServiceExcute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTable">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebServiceExcuteTable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableClear">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebServiceExcuteTableClear" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableDelete">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebServiceExcuteTableDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuery">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExcuteQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuerySQL">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExcuteQuerySQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteSQL">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExcuteSQL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImageBinary">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExecuteSQLImageBinary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImage">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExecuteSQLImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQueryUpdateInfo">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExcuteQueryUpdateInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinaryFormatData">
+      <soap:operation soapAction="http://www.zhubrothers.com/Service.asmx/GetBinaryFormatData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WebServiceExcute">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebServiceExcute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTable">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebServiceExcuteTable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableClear">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebServiceExcuteTableClear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableDelete">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebServiceExcuteTableDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuery">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExcuteQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuerySQL">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExcuteQuerySQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteSQL">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExcuteSQL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImageBinary">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExecuteSQLImageBinary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImage">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExecuteSQLImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQueryUpdateInfo">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/WebExcuteQueryUpdateInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinaryFormatData">
+      <soap12:operation soapAction="http://www.zhubrothers.com/Service.asmx/GetBinaryFormatData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpGet" type="tns:ServiceHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="WebServiceExcuteTableClear">
+      <http:operation location="/WebServiceExcuteTableClear" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableDelete">
+      <http:operation location="/WebServiceExcuteTableDelete" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuery">
+      <http:operation location="/WebExcuteQuery" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuerySQL">
+      <http:operation location="/WebExcuteQuerySQL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteSQL">
+      <http:operation location="/WebExcuteSQL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImageBinary">
+      <http:operation location="/WebExecuteSQLImageBinary" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQueryUpdateInfo">
+      <http:operation location="/WebExcuteQueryUpdateInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinaryFormatData">
+      <http:operation location="/GetBinaryFormatData" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceHttpPost" type="tns:ServiceHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="WebServiceExcuteTableClear">
+      <http:operation location="/WebServiceExcuteTableClear" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebServiceExcuteTableDelete">
+      <http:operation location="/WebServiceExcuteTableDelete" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuery">
+      <http:operation location="/WebExcuteQuery" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQuerySQL">
+      <http:operation location="/WebExcuteQuerySQL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteSQL">
+      <http:operation location="/WebExcuteSQL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExecuteSQLImageBinary">
+      <http:operation location="/WebExecuteSQLImageBinary" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebExcuteQueryUpdateInfo">
+      <http:operation location="/WebExcuteQueryUpdateInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBinaryFormatData">
+      <http:operation location="/GetBinaryFormatData" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://www.zhubrothers.com/ZhuBrothersWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://www.zhubrothers.com/ZhuBrothersWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpGet" binding="tns:ServiceHttpGet">
+      <http:address location="http://www.zhubrothers.com/ZhuBrothersWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceHttpPost" binding="tns:ServiceHttpPost">
+      <http:address location="http://www.zhubrothers.com/ZhuBrothersWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
